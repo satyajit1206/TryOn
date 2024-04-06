@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import './demo.css'
+import "./demo.css";
 
 const VirtualTryOnComponent = () => {
   const [personImage, setPersonImage] = useState(null);
@@ -9,7 +9,6 @@ const VirtualTryOnComponent = () => {
   const [loading, setLoading] = useState(false);
   const [personImageUrl, setPersonImageUrl] = useState(null);
   const [clothImageUrl, setclothImageUrl] = useState(null);
-  
 
   const handlePersonImageChange = (event) => {
     const pfile = event.target.files[0];
@@ -22,7 +21,6 @@ const VirtualTryOnComponent = () => {
     setClothImage(cfile);
     setclothImageUrl(URL.createObjectURL(cfile)); // Set the cloth image URL
   };
-  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,8 +33,8 @@ const VirtualTryOnComponent = () => {
       method: "POST",
       url: "https://virtual-try-on2.p.rapidapi.com/clothes-virtual-tryon",
       headers: {
-        'X-RapidAPI-Key': '5a6be78dc2msh1accf98c62ec5bbp1caedbjsnaf2019967a90',
-        'X-RapidAPI-Host': 'virtual-try-on2.p.rapidapi.com',
+        "X-RapidAPI-Key": "5a6be78dc2msh1accf98c62ec5bbp1caedbjsnaf2019967a90",
+        "X-RapidAPI-Host": "virtual-try-on2.p.rapidapi.com",
         "Content-Type": "multipart/form-data",
       },
       data: formData,
@@ -61,20 +59,24 @@ const VirtualTryOnComponent = () => {
     <div className="upload-container">
       <h1>Virtual Try-On</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+
+        <div className="person-image">
           <label>Upload Person Image:</label>
           <input type="file" onChange={handlePersonImageChange} />
-          {personImageUrl && <img src={personImageUrl} alt="Person Image" />} 
+          {personImageUrl && (<img src={personImageUrl} alt="Person Image" />)}
         </div>
-        <div>
+
+        <div className="cloth-image">
           <label>Upload Cloth Image:</label>
           <input type="file" onChange={handleClothImageChange} />
-          {clothImageUrl && <img src={clothImageUrl} alt="cloth image" /> }
+          {clothImageUrl && <img src={clothImageUrl} alt="cloth image" />}
         </div>
+
         <button type="submit" disabled={!personImage || !clothImage || loading}>
           {loading ? "Loading..." : "Try On"}
         </button>
-      </form>
+    </form>
+    
       {finalImage && (
         <div>
           <h2>Final Image:</h2>

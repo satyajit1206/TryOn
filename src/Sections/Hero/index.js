@@ -202,7 +202,7 @@ const HeroSection = () => {
           <CTA>
             <button> <Link to="/getdemo">
             Get Demo Now &nbsp;
-            </Link></button>
+            </Link> </button>
             
             <img src={arrow} alt="cta" width="100" height="100" />
           </CTA>

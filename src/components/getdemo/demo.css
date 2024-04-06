@@ -59,7 +59,6 @@ button[type="submit"]:hover {
   margin-top: 10px;
 } */
 
-
 /* demo.css */
 
 body {
@@ -73,18 +72,20 @@ body {
   display: flex;
   flex-direction: column; /* Main container with column layout */
   align-items: center;
+  position: relative;
+  margin-top: ;
   gap: 1rem;
   padding: 2rem;
   border-radius: 10px;
   background-color: #d5d5f0; /* Lighter purple background for container */
   border: 1px solid #a5a5ec; /* Distinct border */
-  box-shadow:2px 5px 10px black;
+  box-shadow: 2px 5px 10px black;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: #a5a5ec; /* Accent color for heading */
+  color: #090909; /* Accent color for heading */
 }
 
 label {
@@ -101,8 +102,8 @@ input[type="file"] {
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 5px;
   margin-bottom: 1rem;
   object-fit: cover;
@@ -112,7 +113,6 @@ button[type="submit"] {
   padding: 10px 20px;
   background-color: #a5a5ec; /* Accent color for button */
   color: #fff;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
