@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Suspense fallback={null}>
         <GlobalStyle />
-        <ScrollToTop />
+        <ScrollToTop /> 
         <Header />
 
         <Routes>
